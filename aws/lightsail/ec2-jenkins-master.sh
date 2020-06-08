@@ -22,10 +22,10 @@ ln -s maven/bin/mvn /bin/mvn
 
 # install Jenkins
 cd /
-wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
-rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
-yum upgrade -y
-yum install -y jenkins java-1.8.0-openjdk-devel
+wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum upgrade
+yum install jenkins java-1.8.0-openjdk-devel
 
 systemctl start jenkins
 systemctl enable jenkins
@@ -33,7 +33,7 @@ systemctl enable jenkins
 amazon-linux-extras install -y nginx1
 
 cd /etc/nginx/default.d
-wget https://github.com/fantasticVoyager/jenkins-bootcamp-course/blob/master/aws/lightsail/lightsail-jenkins.conf
+wget https://raw.githubusercontent.com/fantasticVoyager/jenkins-bootcamp-course/master/aws/lightsail/lightsail-jenkins.conf
 
-systemctl restart nginx.service
-systemctl enable nginx.service
+systemctl restart nginx
+systemctl enable nginx
