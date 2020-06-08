@@ -30,11 +30,7 @@ yum install -y jenkins
 systemctl start jenkins
 systemctl enable jenkins
 
-yum install -y nginx
-
-# remove default symlink
-cd /etc/nginx/sites-enabled
-rm default
+amazon-linux-extras install -y nginx1
 
 cd /etc/nginx/conf.d
 wget https://raw.githubusercontent.com/jenkins-training/jenkins-bootcamp-course/master/aws/lightsail/lightsail-jenkins.conf
