@@ -32,8 +32,8 @@ systemctl enable jenkins
 
 amazon-linux-extras install -y nginx1
 
-cd /etc/nginx/conf.d
-wget https://raw.githubusercontent.com/jenkins-training/jenkins-bootcamp-course/master/aws/lightsail/lightsail-jenkins.conf
+cd /etc/nginx/default.d
+wget https://github.com/fantasticVoyager/jenkins-bootcamp-course/blob/master/aws/lightsail/lightsail-jenkins.conf
 
-systemctl restart nginx
-systemctl enable nginx
+systemctl restart nginx.service
+systemctl enable nginx.service
