@@ -30,9 +30,11 @@ yum install -y jenkins java-1.8.0-openjdk-devel
 systemctl start jenkins
 systemctl enable jenkins
 
+#install nginx using amazon-linux-extras
 amazon-linux-extras install -y nginx1
 
-cd /etc/nginx/default.d
+#copy the conf file to conf.d
+cd /etc/nginx/conf.d
 wget https://raw.githubusercontent.com/fantasticVoyager/jenkins-bootcamp-course/master/aws/lightsail/lightsail-jenkins.conf
 
 systemctl restart nginx
